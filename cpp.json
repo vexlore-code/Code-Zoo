@@ -1,0 +1,160 @@
+{
+	"cpp": {
+		"prefix": "cpp",
+		"body": [
+			"/*",
+			"	\"La Ilaha Illallah Muhammadur Rasulullah\""
+			"	   ===================================",
+			"	                    _",
+			"	   __   _______  _ | | ___  _ __ ___ ",
+			"	    \\ \\ / / _ \\ \\/ / |/ _ \\| '__/ _ \\    Created   : ${CURRENT_DATE}-${CURRENT_MONTH}-${CURRENT_YEAR}  ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}",
+			"	     \\ V /  __/>  <| | (_) | | |  __/    ",
+			"	      \\_/ \\___/_/\\_\\_|\\___/|_|  \\___|    GitHub    : https://github.com/vexlore-code",
+			"	  	 			    ✦",
+			"	               v e x l o r e",
+			"	   ===================================",
+			"*/",
+			"",
+			"#include <bits/stdc++.h>",
+			"using namespace std;",
+			"",
+			"#define fastIO ios::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr);",
+			"#define int long long",
+			"#define endl '\\n'",
+			"",
+			"const int MOD = 1e9+7, INF = 1e18, N = 2e5+5;",
+			"",
+			"typedef vector<int> vi;",
+			"typedef pair<int, int> pii;",
+			"typedef vector<pii> vpi;",
+			"",
+			"/*~~~ MAIN CODE ~~~*/",
+			"",
+			"signed main()",
+			"{",
+			"    fastIO;",
+			"    $0",
+			"",
+			"    return 0;",
+			"}",
+		],
+		"description": "C++ template with long long as int, long double typedef, fastIO, and custom header"
+	},
+	"GCD Function": {
+		"prefix": "gcd",
+		"body": [
+			"int gcd(int a, int b) {",
+			"    while (b) {",
+			"        a %= b;",
+			"        swap(a, b);",
+			"    }",
+			"    return a;",
+			"}"
+		],
+		"description": "Greatest Common Divisor"
+	},
+	"LCM Function": {
+		"prefix": "lcm",
+		"body": [
+			"int lcm(int a, int b) {",
+			"    return (a / gcd(a, b)) * b;",
+			"}"
+		],
+		"description": "Least Common Multiple"
+	},
+	"Modular Inverse": {
+		"prefix": "modinv",
+		"body": [
+			"int modInv(int a, int mod = MOD) {",
+			"    return modPow(a, mod - 2, mod);",
+			"}"
+		],
+		"description": "Modular Inverse"
+	},
+	"Modular Exponentiation": {
+		"prefix": "modpow",
+		"body": [
+			"int modPow(int base, int exp, int mod = MOD) {",
+			"    int result = 1;",
+			"    base %= mod;",
+			"    while (exp > 0) {",
+			"        if (exp & 1)",
+			"            result = (result * base) % mod;",
+			"        base = (base * base) % mod;",
+			"        exp >>= 1;",
+			"    }",
+			"    return result;",
+			"}"
+		],
+		"description": "Modular Power"
+	},
+	"For Loop": {
+		"prefix": "for",
+		"body": [
+			"for (int i = 0; i < ${1:n}; i++) {",
+			"    $0",
+			"}"
+		],
+		"description": "Classic for loop from 0 to n-1"
+	},
+	"Vexlore C++ Template": {
+		"prefix": "cc",
+		"body": [
+			"/*",
+			" \"La Ilaha Illallah Muhammadur Rasulullah\""
+			" ╔═══════════════════════════════════════╗",
+			"             ✦ v e x l o r e ✦         	   		Created	 : ${CURRENT_DATE}-${CURRENT_MONTH}-${CURRENT_YEAR}  ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}",
+			"   \"Code like a poet. Debug like a pro.\" 		 GitHub  : https://github.com/vexlore-code",
+			" ╚═══════════════════════════════════════╝",
+			"*/",
+			"",
+			"#include <bits/stdc++.h>",
+			"using namespace std;",
+			"",
+			"#define fastIO ios::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr);",
+			"#define int long long",
+			"#define endl '\\n'",
+			"",
+			"const int MOD = 1e9+7, INF = 1e18, N = 2e5+5;",
+			"",
+			"typedef vector<int> vi;",
+			"typedef pair<int, int> pii;",
+			"typedef vector<pii> vpi;",
+			"/*",
+			" ═══════════════════════════════════ MAIN CODE ═══════════════════════════════════ ",
+			"*/",
+			"signed main()",
+			"{",
+			"    fastIO;",
+			"    $0",
+			"",
+			"    return 0;",
+			"}"
+		],
+		"description": "vexlore personalized C++ template snippet"
+	},
+	"STL Typedefs and Macros": {
+		"prefix": "stl",
+		"body": [
+			"typedef vector<int> vi;",
+			"typedef vector<vi> vvi;",
+			"typedef pair<int, int> pii;",
+			"typedef vector<pii> vpi;",
+			"typedef map<int, int> mii;",
+			"typedef set<int> si;",
+			"typedef multiset<int> msi;",
+			"typedef unordered_map<int, int> umii;",
+			"typedef unordered_set<int> usi;",
+			"typedef priority_queue<int> maxheap;",
+			"typedef priority_queue<int, vector<int>, greater<int>> minheap;",
+			"#define pb push_back",
+			"#define eb emplace_back",
+			"#define F first",
+			"#define S second",
+			"#define all(x) (x).begin(), (x).end()",
+			"#define rall(x) (x).rbegin(), (x).rend()",
+			"#define sz(x) (int)(x).size()"
+		],
+		"description": "STL typedefs and macros, one declaration per line"
+	}
+}
