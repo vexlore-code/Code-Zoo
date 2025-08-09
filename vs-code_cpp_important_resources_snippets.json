@@ -1,0 +1,169 @@
+	
+Prefix Sum	
+prefix	"prefixSum"
+body	
+0	"void prefixSum(vector<int> &a) {"
+1	"    vector<int> pref(a.size());"
+2	"    pref[0] = a[0];"
+3	"    for (int i = 1; i < (int)a.size(); i++)"
+4	"        pref[i] = pref[i-1] + a[i];"
+5	'    for (int x : pref) cout << x << " ";'
+6	'    cout << "\\n";'
+7	"}"
+description	"Prefix sum calculation"
+Prefix XOR	
+prefix	"prefixXor"
+body	
+0	"void prefixXor(vector<int> &a) {"
+1	"    vector<int> px(a.size());"
+2	"    px[0] = a[0];"
+3	"    for (int i = 1; i < (int)a.size(); i++)"
+4	"        px[i] = px[i-1] ^ a[i];"
+5	'    for (int x : px) cout << x << " ";'
+6	'    cout << "\\n";'
+7	"}"
+description	"Prefix XOR calculation"
+Binary Search	
+prefix	"binarySearch"
+body	
+0	"void binarySearchDemo(vector<int> &a, int target) {"
+1	"    int l = 0, r = (int)a.size() - 1;"
+2	"    while (l <= r) {"
+3	"        int mid = l + (r - l) / 2;"
+4	"        if (a[mid] == target) {"
+5	'            cout << "Found at index: " << mid << "\\n";'
+6	"            return;"
+7	"        } else if (a[mid] < target) l = mid + 1;"
+8	"        else r = mid - 1;"
+9	"    }"
+10	'    cout << "Not found\\n";'
+11	"}"
+description	"Binary search example"
+Two Pointers	
+prefix	"twoPointers"
+body	
+0	"void twoPointersDemo(vector<int> &a, int target) {"
+1	"    int l = 0, r = (int)a.size() - 1;"
+2	"    while (l < r) {"
+3	"        int sum = a[l] + a[r];"
+4	"        if (sum == target) {"
+5	'            cout << l << " " << r << "\\n";'
+6	"            return;"
+7	"        }"
+8	"        if (sum < target) l++;"
+9	"        else r--;"
+10	"    }"
+11	"}"
+description	"Two pointers sum example"
+Bubble Sort	
+prefix	"bubbleSort"
+body	
+0	"void bubbleSort(vector<int> &a) {"
+1	"    for (int i = 0; i < (int)a.size() - 1; i++)"
+2	"        for (int j = 0; j < (int)a.size() - i - 1; j++)"
+3	"            if (a[j] > a[j + 1]) swap(a[j], a[j + 1]);"
+4	"}"
+description	"Bubble sort implementation"
+Selection Sort	
+prefix	"selectionSort"
+body	
+0	"void selectionSort(vector<int> &a) {"
+1	"    for (int i = 0; i < (int)a.size() - 1; i++) {"
+2	"        int mn = i;"
+3	"        for (int j = i + 1; j < (int)a.size(); j++)"
+4	"            if (a[j] < a[mn]) mn = j;"
+5	"        swap(a[i], a[mn]);"
+6	"    }"
+7	"}"
+description	"Selection sort implementation"
+Insertion Sort	
+prefix	"insertionSort"
+body	
+0	"void insertionSort(vector<int> &a) {"
+1	"    for (int i = 1; i < (int)a.size(); i++) {"
+2	"        int key = a[i], j = i - 1;"
+3	"        while (j >= 0 && a[j] > key)"
+4	"            a[j + 1] = a[j--];"
+5	"        a[j + 1] = key;"
+6	"    }"
+7	"}"
+description	"Insertion sort implementation"
+Counting Sort	
+prefix	"countingSort"
+body	
+0	"void countingSort(vector<int> &a) {"
+1	"    int mx = *max_element(a.begin(), a.end());"
+2	"    vector<int> cnt(mx + 1, 0);"
+3	"    for (int x : a) cnt[x]++;"
+4	"    int idx = 0;"
+5	"    for (int i = 0; i <= mx; i++)"
+6	"        while (cnt[i]--) a[idx++] = i;"
+7	"}"
+description	"Counting sort implementation"
+Merge Sort	
+prefix	"mergeSort"
+body	
+0	"void mergeSort(vector<int> &a, int l, int r) {"
+1	"    if (l >= r) return;"
+2	"    int m = (l + r) / 2;"
+3	"    mergeSort(a, l, m);"
+4	"    mergeSort(a, m + 1, r);"
+5	"    vector<int> tmp;"
+6	"    int i = l, j = m + 1;"
+7	"    while (i <= m && j <= r)"
+8	"        tmp.push_back(a[i] < a[j] ? a[i++] : a[j++]);"
+9	"    while (i <= m) tmp.push_back(a[i++]);"
+10	"    while (j <= r) tmp.push_back(a[j++]);"
+11	"    for (int k = 0; k < (int)tmp.size(); k++) a[l + k] = tmp[k];"
+12	"}"
+description	"Merge sort implementation"
+Quick Sort	
+prefix	"quickSort"
+body	
+0	"int partitionQS(vector<int> &a, int l, int r) {"
+1	"    int pivot = a[r], i = l - 1;"
+2	"    for (int j = l; j < r; j++)"
+3	"        if (a[j] < pivot) swap(a[++i], a[j]);"
+4	"    swap(a[i + 1], a[r]);"
+5	"    return i + 1;"
+6	"}"
+7	"void quickSort(vector<int> &a, int l, int r) {"
+8	"    if (l < r) {"
+9	"        int pi = partitionQS(a, l, r);"
+10	"        quickSort(a, l, pi - 1);"
+11	"        quickSort(a, pi + 1, r);"
+12	"    }"
+13	"}"
+description	"Quick sort implementation"
+Radix Sort	
+prefix	"radixSort"
+body	
+0	"void countingSortRadix(vector<int> &a, int exp) {"
+1	"    vector<int> output(a.size());"
+2	"    int cnt[10] = {0};"
+3	"    for (int x : a) cnt[(x / exp) % 10]++;"
+4	"    for (int i = 1; i < 10; i++) cnt[i] += cnt[i - 1];"
+5	"    for (int i = a.size() - 1; i >= 0; i--) {"
+6	"        output[cnt[(a[i] / exp) % 10] - 1] = a[i];"
+7	"        cnt[(a[i] / exp) % 10]--;"
+8	"    }"
+9	"    a = output;"
+10	"}"
+11	"void radixSort(vector<int> &a) {"
+12	"    int mx = *max_element(a.begin(), a.end());"
+13	"    for (int exp = 1; mx / exp > 0; exp *= 10)"
+14	"        countingSortRadix(a, exp);"
+15	"}"
+description	"Radix sort implementation"
+STL Sort with Custom Comparator	
+prefix	"stlSortCustom"
+body	
+0	"void stlSortDemo() {"
+1	"    vector<int> v = {5, 1, 4, 2, 3};"
+2	"    sort(v.begin(), v.end()); // Ascending"
+3	"    sort(v.begin(), v.end(), greater<int>()); // Descending"
+4	"    sort(v.begin(), v.end(), [](int a, int b) { return a < b; }); // Custom"
+5	'    for (int x : v) cout << x << " ";'
+6	'    cout << "\\n";'
+7	"}"
+description	"STL sort with custom comparator"
