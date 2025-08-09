@@ -1,0 +1,198 @@
+{
+  "Vexlore C++ Template": {
+    "prefix": "cc",
+    "body": [
+      "/*",
+      "         Author: Munna",
+      "         Created: ${CURRENT_DATE}-${CURRENT_MONTH}-${CURRENT_YEAR} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}",
+      "*/",
+      "",
+      "#include <bits/stdc++.h>",
+      "using namespace std;",
+      "",
+      "#define fastIO ios::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr);",
+      "#define int long long",
+      "#define endl '\\n'",
+      "",
+      "const int MOD = 1e9+7, INF = 1e18, N = 2e5+5;",
+      "",
+      "typedef vector<int> vi;",
+      "typedef pair<int, int> pii;",
+      "typedef vector<pii> vpi;",
+      "/*",
+      " ═══════════════════════════════════ MAIN CODE ═══════════════════════════════════ ",
+      "*/",
+      "signed main()",
+      "{",
+      "    fastIO;",
+      "    $0",
+      "",
+      "    return 0;",
+      "}"
+    ],
+    "description": "Vexlore fast C++ template by Munna with typedefs and macros"
+  },
+
+  "Linear Search": {
+    "prefix": "linearsearch",
+    "body": [
+      "void linearSearch(vector<int> &arr, int key)",
+      "{",
+      "    for (int i = 0; i < arr.size(); i++)",
+      "    {",
+      "        if (arr[i] == key)",
+      "        {",
+      "            cout << \"Linear Search: Found at index \" << i << \"\\n\";",
+      "            return;",
+      "        }",
+      "    }",
+      "    cout << \"Linear Search: Not found\\n\";",
+      "}"
+    ],
+    "description": "Linear search in vector"
+  },
+
+  "Binary Search": {
+    "prefix": "binarysearch",
+    "body": [
+      "void binarySearchFunc(vector<int> &arr, int key)",
+      "{",
+      "    int l = 0, r = arr.size() - 1;",
+      "    while (l <= r)",
+      "    {",
+      "        int mid = l + (r - l) / 2;",
+      "        if (arr[mid] == key)",
+      "        {",
+      "            cout << \"Binary Search: Found at index \" << mid << \"\\n\";",
+      "            return;",
+      "        }",
+      "        else if (arr[mid] < key) l = mid + 1;",
+      "        else r = mid - 1;",
+      "    }",
+      "    cout << \"Binary Search: Not found\\n\";",
+      "}"
+    ],
+    "description": "Binary search in sorted vector"
+  },
+
+  "Merge Sort": {
+    "prefix": "mergesort",
+    "body": [
+      "void mergeArr(vector<int> &arr, int l, int mid, int r)",
+      "{",
+      "    vector<int> L(arr.begin() + l, arr.begin() + mid + 1);",
+      "    vector<int> R(arr.begin() + mid + 1, arr.begin() + r + 1);",
+      "    int i = 0, j = 0, k = l;",
+      "    while (i < L.size() && j < R.size())",
+      "    {",
+      "        if (L[i] <= R[j]) arr[k++] = L[i++];",
+      "        else arr[k++] = R[j++];",
+      "    }",
+      "    while (i < L.size()) arr[k++] = L[i++];",
+      "    while (j < R.size()) arr[k++] = R[j++];",
+      "}",
+      "",
+      "void mergeSort(vector<int> &arr, int l, int r)",
+      "{",
+      "    if (l < r)",
+      "    {",
+      "        int mid = (l + r) / 2;",
+      "        mergeSort(arr, l, mid);",
+      "        mergeSort(arr, mid + 1, r);",
+      "        mergeArr(arr, l, mid, r);",
+      "    }",
+      "}"
+    ],
+    "description": "Merge sort implementation"
+  },
+
+  "Linked List": {
+    "prefix": "linkedlist",
+    "body": [
+      "struct Node",
+      "{",
+      "    int data;",
+      "    Node* next;",
+      "    Node(int val) : data(val), next(NULL) {}",
+      "};",
+      "",
+      "void printList(Node* head)",
+      "{",
+      "    while (head)",
+      "    {",
+      "        cout << head->data << \" -> \";",
+      "        head = head->next;",
+      "    }",
+      "    cout << \"NULL\\n\";",
+      "}"
+    ],
+    "description": "Singly linked list node struct and print function"
+  },
+
+  "Map Example": {
+    "prefix": "mapexample",
+    "body": [
+      "void mapExample()",
+      "{",
+      "    map<string, int> mp;",
+      "    mp[\"Alice\"] = 25;",
+      "    mp[\"Bob\"] = 30;",
+      "    mp[\"Charlie\"] = 20;",
+      "    cout << \"\\nMap contents:\\n\";",
+      "    for (auto &p : mp) cout << p.first << \": \" << p.second << \"\\n\";",
+      "}"
+    ],
+    "description": "Map example with string keys and int values"
+  },
+
+  "Stack Example": {
+    "prefix": "stackexample",
+    "body": [
+      "void stackExample()",
+      "{",
+      "    stack<int> st;",
+      "    st.push(10); st.push(20); st.push(30);",
+      "    cout << \"\\nStack top: \" << st.top() << \"\\n\"; st.pop();",
+      "    cout << \"Stack new top: \" << st.top() << \"\\n\";",
+      "}"
+    ],
+    "description": "Stack usage example"
+  },
+
+  "Queue Example": {
+    "prefix": "queueexample",
+    "body": [
+      "void queueExample()",
+      "{",
+      "    queue<int> q;",
+      "    q.push(1); q.push(2); q.push(3);",
+      "    cout << \"\\nQueue front: \" << q.front() << \"\\n\"; q.pop();",
+      "    cout << \"Queue new front: \" << q.front() << \"\\n\";",
+      "}"
+    ],
+    "description": "Queue usage example"
+  },
+
+  "Vector Example": {
+    "prefix": "vectorexample",
+    "body": [
+      "void vectorExample()",
+      "{",
+      "    vector<int> vec = {5, 2, 9, 1, 6};",
+      "    cout << \"Original Vector: \";",
+      "    for (int x : vec) cout << x << \" \";",
+      "    cout << \"\\n\";",
+      "",
+      "    mergeSort(vec, 0, vec.size() - 1);",
+      "    cout << \"Sorted Vector: \";",
+      "    for (int x : vec) cout << x << \" \";",
+      "    cout << \"\\n\";",
+      "",
+      "    int key = 6;",
+      "    linearSearch(vec, key);",
+      "    binarySearchFunc(vec, key);",
+      "}"
+    ],
+    "description": "Vector example with sorting and searching"
+  }
+}
